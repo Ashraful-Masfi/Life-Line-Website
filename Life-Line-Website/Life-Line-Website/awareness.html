@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Awareness - Life Line</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="awareness.css">
+</head>
+<body>
+    <!-- Awareness Header -->
+    <header class="awareness-header">
+        <div class="container">
+            <h1 class="awareness-title">💡 Health Awareness</h1>
+            <p class="awareness-subtitle">Empowering you with knowledge for a healthier life</p>
+        </div>
+    </header>
+
+    <!-- Awareness Topics -->
+    <section class="topics-section">
+        <div class="container">
+            <div class="topics-grid">
+                <div class="topic-card" data-topic="hygiene">
+                    <div class="topic-icon">🧼</div>
+                    <h3>Personal Hygiene</h3>
+                    <p>Essential practices for maintaining good health and preventing diseases</p>
+                    <button class="topic-btn" onclick="showTopicDetail('hygiene')">Learn More</button>
+                </div>
+
+                <div class="topic-card" data-topic="nutrition">
+                    <div class="topic-icon">🍎</div>
+                    <h3>Nutrition & Diet</h3>
+                    <p>Balanced diet guidelines and nutritional requirements for all ages</p>
+                    <button class="topic-btn" onclick="showTopicDetail('nutrition')">Learn More</button>
+                </div>
+
+                <div class="topic-card" data-topic="exercise">
+                    <div class="topic-icon">🏃</div>
+                    <h3>Physical Activity</h3>
+                    <p>Exercise routines and benefits of regular physical activity</p>
+                    <button class="topic-btn" onclick="showTopicDetail('exercise')">Learn More</button>
+                </div>
+
+                <div class="topic-card" data-topic="mental">
+                    <div class="topic-icon">😊</div>
+                    <h3>Mental Wellness</h3>
+                    <p>Strategies for maintaining mental health and managing stress</p>
+                    <button class="topic-btn" onclick="showTopicDetail('mental')">Learn More</button>
+                </div>
+
+                <div class="topic-card" data-topic="prevention">
+                    <div class="topic-icon">🛡️</div>
+                    <h3>Disease Prevention</h3>
+                    <p>Vaccination, screening, and preventive healthcare measures</p>
+                    <button class="topic-btn" onclick="showTopicDetail('prevention')">Learn More</button>
+                </div>
+
+                <div class="topic-card" data-topic="firstaid">
+                    <div class="topic-icon">🩹</div>
+                    <h3>Basic First Aid</h3>
+                    <p>Essential first aid knowledge for common emergencies</p>
+                    <button class="topic-btn" onclick="showTopicDetail('firstaid')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Topic View -->
+    <section class="detail-section" id="detailSection" style="display: none;">
+        <div class="container">
+            <button class="back-btn" onclick="hideTopicDetail()">← Back to Topics</button>
+            <div class="detail-content" id="detailContent">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Tips Carousel -->
+    <section class="tips-section">
+        <div class="container">
+            <h2 class="section-title">Quick Health Tips</h2>
+            <div class="tips-carousel">
+                <div class="tip-slide active">
+                    <div class="tip-icon">💧</div>
+                    <h4>Stay Hydrated</h4>
+                    <p>Drink at least 8 glasses of water daily for optimal health</p>
+                </div>
+                <div class="tip-slide">
+                    <div class="tip-icon">🛌</div>
+                    <h4>Quality Sleep</h4>
+                    <p>Aim for 7-9 hours of uninterrupted sleep each night</p>
+                </div>
+                <div class="tip-slide">
+                    <div class="tip-icon">🚭</div>
+                    <h4>Avoid Smoking</h4>
+                    <p>Quit smoking to reduce risk of heart disease and cancer</p>
+                </div>
+                <div class="tip-slide">
+                    <div class="tip-icon">🧘</div>
+                    <h4>Manage Stress</h4>
+                    <p>Practice meditation and relaxation techniques daily</p>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" onclick="prevTip()">❮</button>
+                <button class="carousel-btn" onclick="nextTip()">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <div class="back-home">
+        <a href="index.html" class="back-btn">← Back to Life Line</a>
+    </div>
+
+    <script src="awareness.js"></script>
+</body>
+</html>

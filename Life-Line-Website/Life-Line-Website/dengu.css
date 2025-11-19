@@ -1,0 +1,637 @@
+/* Dengue Page Styles */
+:root {
+    --dengue-red: #cc0000;
+    --dengue-orange: #ff9900;
+    --dengue-yellow: #ffcc00;
+    --dengue-green: #00cc66;
+    --dark-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+}
+
+body {
+    background: var(--dark-bg);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dengue Header */
+.dengue-header {
+    background: linear-gradient(135deg, #660000 0%, #cc0000 100%);
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.dengue-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="mosquito" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10 0Q15 5 10 10Q5 5 10 0M5 5L15 5M5 7L15 7" stroke="rgba(255,255,255,0.1)" fill="none" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23mosquito)"/></svg>');
+    opacity: 0.3;
+}
+
+.dengue-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.dengue-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+/* Emergency Alert */
+.emergency-alert {
+    background: rgba(0, 82, 204, 0.3);
+    border: 2px solid var(--dengue-red);
+    padding: 2rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+}
+
+.alert-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.alert-content h4 {
+    color: var(--dengue-red);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.alert-content p {
+    color: #ccc;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.alert-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Risk Map Section */
+.risk-map-section {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+}
+
+.section-title {
+    text-align: center;
+    color: var(--dengue-red);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.risk-map {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.map-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.color.high-risk {
+    background: var(--dengue-red);
+}
+
+.color.medium-risk {
+    background: var(--dengue-orange);
+}
+
+.color.low-risk {
+    background: var(--dengue-green);
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.area-card {
+    background: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.area-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.area-card:hover {
+    transform: translateX(5px);
+    background: #333;
+}
+
+.area-card.high-risk {
+    border-left-color: var(--dengue-red);
+    background: rgba(204, 0, 0, 0.1);
+}
+
+.area-card.medium-risk {
+    border-left-color: var(--dengue-orange);
+    background: rgba(255, 153, 0, 0.1);
+}
+
+.area-card.low-risk {
+    border-left-color: var(--dengue-green);
+    background: rgba(0, 204, 102, 0.1);
+}
+
+.area-card h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.area-card p {
+    color: #ccc;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.risk-level {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.high-risk .risk-level {
+    background: var(--dengue-red);
+    color: white;
+}
+
+.medium-risk .risk-level {
+    background: var(--dengue-orange);
+    color: white;
+}
+
+.low-risk .risk-level {
+    background: var(--dengue-green);
+    color: white;
+}
+
+/* Testing Section */
+.testing-section {
+    padding: 4rem 0;
+    background: #111;
+}
+
+.filter-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+    margin-bottom: 3rem;
+}
+
+.filter-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 1rem;
+    align-items: end;
+}
+
+.filter-group {
+    margin-bottom: 0;
+}
+
+.filter-group label {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: bold;
+}
+
+.form-control {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--dengue-red);
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.3);
+    outline: none;
+}
+
+.search-btn {
+    background: var(--dengue-red);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    height: fit-content;
+}
+
+.search-btn:hover {
+    background: #ff3333;
+    transform: translateY(-2px);
+}
+
+.centers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.center-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.center-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.center-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--dengue-red);
+    box-shadow: 0 15px 40px rgba(204, 0, 0, 0.3);
+}
+
+.center-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.center-name {
+    color: var(--dengue-red);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.center-type {
+    background: var(--dengue-orange);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.center-location {
+    color: #ccc;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.center-contact {
+    background: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.center-contact:hover {
+    background: #333;
+    transform: translateX(5px);
+}
+
+.contact-number {
+    color: var(--dengue-green);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Test Availability */
+.test-availability {
+    margin-top: 1.5rem;
+}
+
+.availability-title {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.tests-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.test-item {
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: #2a2a2a;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.test-item.available {
+    background: rgba(0, 204, 102, 0.2);
+    border: 1px solid var(--dengue-green);
+}
+
+.test-item.unavailable {
+    background: rgba(204, 0, 0, 0.2);
+    border: 1px solid var(--dengue-red);
+    opacity: 0.6;
+}
+
+.test-name {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.test-status {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.available .test-status {
+    color: var(--dengue-green);
+}
+
+.unavailable .test-status {
+    color: var(--dengue-red);
+}
+
+.distance-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--dengue-green);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 204, 102, 0.3);
+}
+
+/* Prevention Section */
+.prevention-section {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+}
+
+.prevention-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.prevention-card {
+    background: var(--card-bg);
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
+
+.prevention-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--dengue-orange);
+    box-shadow: 0 15px 40px rgba(255, 153, 0, 0.3);
+}
+
+.prevention-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.prevention-card h4 {
+    color: var(--dengue-orange);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.prevention-card p {
+    color: #ccc;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Symptoms Section */
+.symptoms-section {
+    padding: 4rem 0;
+    background: #111;
+}
+
+.symptoms-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.symptoms-list, .warning-signs {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.symptoms-list h4, .warning-signs h4 {
+    color: var(--dengue-red);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.symptoms-list ul, .warning-signs ul {
+    color: #ccc;
+    padding-left: 1.5rem;
+    line-height: 1.8;
+}
+
+.symptoms-list li, .warning-signs li {
+    margin-bottom: 0.5rem;
+}
+
+.warning-signs {
+    border-color: var(--dengue-red);
+    background: rgba(204, 0, 0, 0.1);
+}
+
+.emergency-note {
+    background: var(--dengue-red);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.treatment-guide {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.treatment-guide h4 {
+    color: var(--dengue-green);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.treatment-steps {
+    display: grid;
+    gap: 1rem;
+}
+
+.step {
+    background: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--dengue-green);
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    background: #333;
+    transform: translateX(5px);
+}
+
+/* Back to Home */
+.back-home {
+    text-align: center;
+    padding: 3rem 0;
+    background: var(--dark-bg);
+}
+
+.back-btn {
+    color: var(--dengue-red);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--dengue-red);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background: var(--dengue-red);
+    color: white;
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dengue-title {
+        font-size: 2rem;
+    }
+    
+    .filter-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .centers-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .prevention-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .symptoms-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .emergency-alert {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .alert-stats {
+        justify-content: center;
+    }
+    
+    .map-legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}

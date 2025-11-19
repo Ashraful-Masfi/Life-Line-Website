@@ -1,0 +1,477 @@
+/* Ambulance Page Styles */
+:root {
+    --ambulance-red: #cc0000;
+    --ambulance-blue: #0066cc;
+    --ambulance-green: #00cc66;
+    --ambulance-orange: #ff9900;
+    --dark-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+}
+
+body {
+    background: var(--dark-bg);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ambulance Header */
+.ambulance-header {
+    background: linear-gradient(135deg, #660000 0%, #cc0000 100%);
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ambulance-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.ambulance-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+/* Emergency Call */
+.emergency-call {
+    margin-top: 2rem;
+}
+
+.emergency-btn {
+    background: var(--ambulance-red);
+    color: white;
+    border: none;
+    padding: 1.5rem 3rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(204, 0, 0, 0.5);
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    animation: emergencyPulse 1.5s infinite;
+}
+
+.emergency-btn:hover {
+    background: #ff3333;
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(204, 0, 0, 0.7);
+}
+
+.call-icon {
+    font-size: 2rem;
+}
+
+.call-note {
+    color: #ccc;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Request Section */
+.request-section {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+}
+
+.request-card {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 2px solid var(--ambulance-red);
+    box-shadow: 0 10px 30px rgba(204, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.request-card h3 {
+    color: var(--ambulance-red);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: bold;
+}
+
+.form-control {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--ambulance-red);
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.3);
+    outline: none;
+}
+
+/* Location Input */
+.location-input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.location-btn {
+    background: var(--ambulance-blue);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.location-btn:hover {
+    background: #0052a3;
+}
+
+.request-btn {
+    background: linear-gradient(45deg, var(--ambulance-red), #ff3333);
+    color: white;
+    border: none;
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(204, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.request-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(204, 0, 0, 0.6);
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+}
+
+/* Tracking Section */
+.tracking-section {
+    padding: 4rem 0;
+    background: #111;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--ambulance-red);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.tracking-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tracking-map {
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 2px solid var(--ambulance-blue);
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #ccc;
+    text-align: center;
+}
+
+.map-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.tracking-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.tracking-card, .status-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.tracking-card h4, .status-card h4 {
+    color: var(--ambulance-red);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.label {
+    color: #ccc;
+}
+
+.value {
+    color: white;
+    font-weight: bold;
+}
+
+/* Status Timeline */
+.status-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.status-item.active {
+    background: rgba(0, 204, 102, 0.1);
+    border: 1px solid var(--ambulance-green);
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #666;
+    flex-shrink: 0;
+}
+
+.status-item.active .status-dot {
+    background: var(--ambulance-green);
+    box-shadow: 0 0 10px rgba(0, 204, 102, 0.5);
+}
+
+.status-text {
+    color: #ccc;
+    flex: 1;
+}
+
+.status-item.active .status-text {
+    color: white;
+    font-weight: bold;
+}
+
+.status-time {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+/* Services Section */
+.services-section {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--ambulance-red);
+    box-shadow: 0 15px 40px rgba(204, 0, 0, 0.3);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.service-card h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.service-card p {
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-contact {
+    color: var(--ambulance-green);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Instructions Section */
+.instructions-section {
+    padding: 4rem 0;
+    background: #111;
+}
+
+.instructions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.instruction-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.instruction-card h4 {
+    color: var(--ambulance-orange);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.instruction-card ul {
+    color: #ccc;
+    padding-left: 1.5rem;
+    line-height: 1.8;
+}
+
+.instruction-card li {
+    margin-bottom: 0.5rem;
+}
+
+/* Back to Home */
+.back-home {
+    text-align: center;
+    padding: 3rem 0;
+    background: var(--dark-bg);
+}
+
+.back-btn {
+    color: var(--ambulance-red);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--ambulance-red);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background: var(--ambulance-red);
+    color: white;
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes emergencyPulse {
+    0%, 100% { 
+        box-shadow: 0 10px 30px rgba(204, 0, 0, 0.5);
+    }
+    50% { 
+        box-shadow: 0 10px 40px rgba(204, 0, 0, 0.8);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ambulance-title {
+        font-size: 2rem;
+    }
+    
+    .emergency-btn {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+    }
+    
+    .request-card {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .tracking-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .tracking-map {
+        height: 300px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .instructions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .location-input {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,541 @@
+/* Doctors Blog Page Styles */
+:root {
+    --blog-blue: #0066cc;
+    --blog-green: #00cc66;
+    --blog-purple: #9933cc;
+    --blog-orange: #ff9900;
+    --blog-red: #cc0000;
+    --dark-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+}
+
+body {
+    background: var(--dark-bg);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Blog Header */
+.blog-header {
+    background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
+    margin-bottom: 1rem;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.blog-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+/* Blog Categories */
+.blog-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.category-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid transparent;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-weight: bold;
+}
+
+.category-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.category-btn.active {
+    background: var(--blog-blue);
+    border-color: white;
+    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.5);
+}
+
+/* Featured Section */
+.featured-section {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+}
+
+.section-title {
+    text-align: center;
+    color: var(--blog-blue);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.featured-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.featured-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.featured-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--blog-blue);
+    box-shadow: 0 20px 50px rgba(0, 102, 204, 0.3);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--blog-orange);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.article-image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    position: relative;
+}
+
+.article-content {
+    padding: 2rem;
+}
+
+.article-category {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.article-category.cardiology {
+    background: var(--blog-red);
+    color: white;
+}
+
+.article-category.neurology {
+    background: var(--blog-purple);
+    color: white;
+}
+
+.article-category.pediatrics {
+    background: var(--blog-green);
+    color: white;
+}
+
+.article-category.dermatology {
+    background: var(--blog-orange);
+    color: white;
+}
+
+.article-category.nutrition {
+    background: #ff66cc;
+    color: white;
+}
+
+.article-category.mental-health {
+    background: #66ccff;
+    color: white;
+}
+
+.article-category.prevention {
+    background: var(--blog-blue);
+    color: white;
+}
+
+.article-title {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.article-excerpt {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clam: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+}
+
+.doctor-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.doctor-name {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.doctor-specialty {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.article-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.read-more-btn {
+    background: transparent;
+    color: var(--blog-blue);
+    border: 2px solid var(--blog-blue);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.read-more-btn:hover {
+    background: var(--blog-blue);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Articles Section */
+.articles-section {
+    padding: 4rem 0;
+    background: #111;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.article-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.article-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--blog-blue);
+    box-shadow: 0 15px 40px rgba(0, 102, 204, 0.3);
+}
+
+.article-card .article-image {
+    height: 150px;
+    font-size: 3rem;
+}
+
+.article-card .article-content {
+    padding: 1.5rem;
+}
+
+.article-card .article-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.article-card .article-excerpt {
+    -webkit-line-clam: 2;
+    margin-bottom: 1rem;
+}
+
+.article-card .article-meta {
+    margin-bottom: 1rem;
+    padding-top: 0.8rem;
+}
+
+/* Article Modal */
+.article-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    z-index: 1000;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    background: var(--dark-bg);
+    margin: 2rem auto;
+    max-width: 800px;
+    border-radius: 20px;
+    position: relative;
+    border: 2px solid var(--blog-blue);
+    animation: modalSlideIn 0.3s ease;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--blog-red);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    background: #ff3333;
+    transform: scale(1.1);
+}
+
+.modal-body {
+    padding: 3rem;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-article-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #333;
+}
+
+.modal-category {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.modal-title {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.modal-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.modal-doctor {
+    font-weight: bold;
+    color: var(--blog-blue);
+}
+
+.modal-content-body {
+    color: #ccc;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.modal-content-body h3 {
+    color: white;
+    margin: 2rem 0 1rem 0;
+    font-size: 1.5rem;
+}
+
+.modal-content-body p {
+    margin-bottom: 1.5rem;
+}
+
+.modal-content-body ul, .modal-content-body ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.modal-content-body li {
+    margin-bottom: 0.5rem;
+}
+
+.modal-image {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+.article-tips {
+    background: rgba(0, 102, 204, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 4px solid var(--blog-blue);
+    margin: 2rem 0;
+}
+
+.article-tips h4 {
+    color: var(--blog-blue);
+    margin-bottom: 1rem;
+}
+
+.article-tips ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+/* Back to Home */
+.back-home {
+    text-align: center;
+    padding: 3rem 0;
+    background: var(--dark-bg);
+}
+
+.back-btn {
+    color: var(--blog-blue);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--blog-blue);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background: var(--blog-blue);
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blog-title {
+        font-size: 2rem;
+    }
+    
+    .blog-categories {
+        gap: 0.5rem;
+    }
+    
+    .category-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        margin: 1rem;
+    }
+    
+    .modal-body {
+        padding: 2rem 1.5rem;
+    }
+    
+    .modal-title {
+        font-size: 1.8rem;
+    }
+    
+    .modal-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}

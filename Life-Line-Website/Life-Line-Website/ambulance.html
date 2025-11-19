@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulance Service - Life Line</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="ambulance.css">
+</head>
+<body>
+    <!-- Ambulance Header -->
+    <header class="ambulance-header">
+        <div class="container">
+            <h1 class="ambulance-title">🚑 Ambulance Service</h1>
+            <p class="ambulance-subtitle">Emergency ambulance service with real-time tracking across Bangladesh</p>
+            
+            <!-- Emergency Call Button -->
+            <div class="emergency-call">
+                <button class="emergency-btn" onclick="callEmergency()">
+                    <span class="call-icon">📞</span>
+                    Call Emergency: 999
+                </button>
+                <p class="call-note">24/7 Emergency Ambulance Service</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Ambulance Request -->
+    <section class="request-section">
+        <div class="container">
+            <div class="request-card">
+                <h3>🚨 Request Ambulance Immediately</h3>
+                <form id="ambulanceForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="patientName">Patient Name *</label>
+                                <input type="text" id="patientName" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="emergencyType">Emergency Type *</label>
+                                <select id="emergencyType" class="form-control" required>
+                                    <option value="">Select Emergency</option>
+                                    <option value="heart-attack">Heart Attack</option>
+                                    <option value="accident">Road Accident</option>
+                                    <option value="stroke">Stroke</option>
+                                    <option value="pregnancy">Pregnancy Emergency</option>
+                                    <option value="breathing">Breathing Problem</option>
+                                    <option value="other">Other Emergency</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patientCondition">Patient Condition *</label>
+                        <textarea id="patientCondition" class="form-control" rows="2" placeholder="Describe patient's current condition..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickupLocation">Pickup Location *</label>
+                        <div class="location-input">
+                            <input type="text" id="pickupLocation" class="form-control" placeholder="Enter your current location" required>
+                            <button type="button" class="location-btn" onclick="getCurrentLocation()">📍</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hospitalPreference">Preferred Hospital (Optional)</label>
+                        <select id="hospitalPreference" class="form-control">
+                            <option value="">Any Nearby Hospital</option>
+                            <option value="dmch">Dhaka Medical College Hospital</option>
+                            <option value="bsmmu">Bangabandhu Sheikh Mujib Medical University</option>
+                            <option value="apollo">Apollo Hospitals</option>
+                            <option value="square">Square Hospitals</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number *</label>
+                        <input type="tel" id="contactNumber" class="form-control" required>
+                    </div>
+
+                    <button type="submit" class="request-btn">
+                        <span class="btn-icon">🚑</span>
+                        Request Ambulance Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ambulance Tracking -->
+    <section class="tracking-section">
+        <div class="container">
+            <h2 class="section-title">Live Ambulance Tracking</h2>
+            
+            <div class="tracking-container">
+                <div class="tracking-map" id="trackingMap">
+                    <!-- Map will be displayed here -->
+                    <div class="map-placeholder">
+                        <div class="map-icon">🗺️</div>
+                        <h4>Live Tracking Map</h4>
+                        <p>Ambulance location will appear here after request</p>
+                    </div>
+                </div>
+
+                <div class="tracking-info">
+                    <div class="tracking-card">
+                        <h4>Ambulance Details</h4>
+                        <div class="ambulance-info">
+                            <div class="info-item">
+                                <span class="label">Ambulance Number:</span>
+                                <span class="value" id="ambulanceNumber">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Driver Name:</span>
+                                <span class="value" id="driverName">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Contact:</span>
+                                <span class="value" id="driverContact">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">ETA:</span>
+                                <span class="value" id="eta">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="status-card">
+                        <h4>Current Status</h4>
+                        <div class="status-timeline">
+                            <div class="status-item active">
+                                <div class="status-dot"></div>
+                                <span class="status-text">Request Received</span>
+                                <span class="status-time" id="requestTime">-</span>
+                            </div>
+                            <div class="status-item">
+                                <div class="status-dot"></div>
+                                <span class="status-text">Ambulance Dispatched</span>
+                                <span class="status-time">-</span>
+                            </div>
+                            <div class="status-item">
+                                <div class="status-dot"></div>
+                                <span class="status-text">On the Way</span>
+                                <span class="status-time">-</span>
+                            </div>
+                            <div class="status-item">
+                                <div class="status-dot"></div>
+                                <span class="status-text">Arrived at Location</span>
+                                <span class="status-time">-</span>
+                            </div>
+                            <div class="status-item">
+                                <div class="status-dot"></div>
+                                <span class="status-text">Heading to Hospital</span>
+                                <span class="status-time">-</span>
+                            </div>
+                            <div class="status-item">
+                                <div class="status-dot"></div>
+                                <span class="status-text">Arrived at Hospital</span>
+                                <span class="status-time">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Ambulance Services -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Ambulance Services in Bangladesh</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏥</div>
+                    <h4>Government Ambulance</h4>
+                    <p>Free ambulance service from government hospitals</p>
+                    <div class="service-contact">📞 999</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔴</div>
+                    <h4>Red Crescent Ambulance</h4>
+                    <p>Bangladesh Red Crescent Society ambulance service</p>
+                    <div class="service-contact">📞 +880-2-9351265</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🚐</div>
+                    <h4>Private Ambulance</h4>
+                    <p>Paid ambulance services from private providers</p>
+                    <div class="service-contact">📞 16163</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🆘</div>
+                    <h4>Emergency Ambulance</h4>
+                    <p>24/7 emergency ambulance on call</p>
+                    <div class="service-contact">📞 199</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Instructions -->
+    <section class="instructions-section">
+        <div class="container">
+            <h2 class="section-title">🚨 Emergency Instructions While Waiting</h2>
+            <div class="instructions-grid">
+                <div class="instruction-card">
+                    <h4>For Heart Attack</h4>
+                    <ul>
+                        <li>Keep patient calm and seated</li>
+                        <li>Loosen tight clothing</li>
+                        <li>Don't give anything to eat or drink</li>
+                        <li>Be ready with medical history</li>
+                    </ul>
+                </div>
+
+                <div class="instruction-card">
+                    <h4>For Accident Victims</h4>
+                    <ul>
+                        <li>Don't move the patient unnecessarily</li>
+                        <li>Stop bleeding with clean cloth</li>
+                        <li>Keep neck and spine straight</li>
+                        <li>Cover with blanket to prevent shock</li>
+                    </ul>
+                </div>
+
+                <div class="instruction-card">
+                    <h4>For Breathing Problems</h4>
+                    <ul>
+                        <li>Help patient sit upright</li>
+                        <li>Loosen clothing around neck</li>
+                        <li>Use inhaler if available</li>
+                        <li>Keep calm and reassure patient</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <div class="back-home">
+        <a href="index.html" class="back-btn">← Back to Life Line</a>
+    </div>
+
+    <script src="ambulance.js"></script>
+</body>
+</html>

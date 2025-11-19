@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antivenom Availability - Life Line</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="antivenom.css">
+</head>
+<body>
+    <!-- Antivenom Header -->
+    <header class="antivenom-header">
+        <div class="container">
+            <h1 class="antivenom-title">🐍 Antivenom Availability</h1>
+            <p class="antivenom-subtitle">Find snake bite treatment centers and antivenom availability across Bangladesh</p>
+            
+            <!-- Emergency Alert -->
+            <div class="emergency-alert">
+                <div class="alert-icon">🚨</div>
+                <div class="alert-content">
+                    <h4>Snake Bite Emergency?</h4>
+                    <p>Call Emergency: <strong>+880-1711-SNAKE</strong> | Don't panic, keep the patient still</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Antivenom Filter -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-card">
+                <h3>Find Antivenom</h3>
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <label for="cityFilter">Select District</label>
+                        <select id="cityFilter" class="form-control">
+                            <option value="all">All Districts</option>
+                            <option value="dhaka">Dhaka</option>
+                            <option value="chittagong">Chittagong</option>
+                            <option value="khulna">Khulna</option>
+                            <option value="rajshahi">Rajshahi</option>
+                            <option value="sylhet">Sylhet</option>
+                            <option value="barisal">Barisal</option>
+                            <option value="rangpur">Rangpur</option>
+                            <option value="mymensingh">Mymensingh</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="venomFilter">Snake Type</label>
+                        <select id="venomFilter" class="form-control">
+                            <option value="all">All Snake Types</option>
+                            <option value="cobra">Cobra</option>
+                            <option value="krait">Krait</option>
+                            <option value="viper">Viper</option>
+                            <option value="sea-snake">Sea Snake</option>
+                            <option value="unknown">Unknown</option>
+                        </select>
+                    </div>
+                    
+                    <button class="search-btn" onclick="filterCenters()">Search Centers</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Antivenom Centers -->
+    <section class="centers-section">
+        <div class="container">
+            <h2 class="section-title">Antivenom Treatment Centers</h2>
+            <div class="centers-grid" id="centersGrid">
+                <!-- Centers will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- First Aid Guide -->
+    <section class="firstaid-section">
+        <div class="container">
+            <h2 class="section-title">🚑 Snake Bite First Aid</h2>
+            <div class="firstaid-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Stay Calm</h4>
+                        <p>Keep the patient calm and still. Movement can spread venom faster.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Remove Jewelry</h4>
+                        <p>Remove rings, watches, and tight clothing from the affected area.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Position Properly</h4>
+                        <p>Keep the bite area below heart level if possible.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Seek Immediate Help</h4>
+                        <p>Go to the nearest hospital with antivenom facility immediately.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <div class="warning-icon">⚠️</div>
+                <div class="warning-content">
+                    <h4>DO NOT:</h4>
+                    <ul>
+                        <li>Cut the wound or try to suck out venom</li>
+                        <li>Apply ice or tourniquet</li>
+                        <li>Give alcohol or pain medication</li>
+                        <li>Wait for symptoms to appear</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <div class="back-home">
+        <a href="index.html" class="back-btn">← Back to Life Line</a>
+    </div>
+
+    <script src="antivenom.js"></script>
+</body>
+</html>

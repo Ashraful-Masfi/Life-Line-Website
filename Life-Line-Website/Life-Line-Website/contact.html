@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Feedback - Life Line</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <!-- Contact Header -->
+    <header class="contact-header">
+        <div class="container">
+            <h1 class="contact-title">📞 Contact & Feedback</h1>
+            <p class="contact-subtitle">We'd love to hear from you. Share your feedback, suggestions, or report issues.</p>
+        </div>
+    </header>
+
+    <!-- Contact Information -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">📧</div>
+                    <h3>Email Us</h3>
+                    <p>info@lifeline.org</p>
+                    <p>support@lifeline.org</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📞</div>
+                    <h3>Call Us</h3>
+                    <p>Emergency: +880-1711-LIFE</p>
+                    <p>Support: +880-2-55001234</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3>Visit Us</h3>
+                    <p>123 Healthcare Road</p>
+                    <p>Dhaka 1212, Bangladesh</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🕒</div>
+                    <h3>Working Hours</h3>
+                    <p>24/7 Emergency Service</p>
+                    <p>Support: 8:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Form -->
+    <section class="feedback-section">
+        <div class="container">
+            <div class="feedback-container">
+                <h2 class="section-title">Send us your Feedback</h2>
+                <form id="feedbackForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="feedbackName">Your Name *</label>
+                                <input type="text" id="feedbackName" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="feedbackEmail">Email Address *</label>
+                                <input type="email" id="feedbackEmail" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedbackSubject">Subject *</label>
+                        <select id="feedbackSubject" class="form-control" required>
+                            <option value="">Select Subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="complaint">Complaint</option>
+                            <option value="technical">Technical Issue</option>
+                            <option value="emergency">Emergency Assistance</option>
+                            <option value="partnership">Partnership</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedbackMessage">Message *</label>
+                        <textarea id="feedbackMessage" class="form-control" rows="5" required placeholder="Please share your feedback, suggestions, or report any issues..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedbackPriority">Priority Level</label>
+                        <select id="feedbackPriority" class="form-control">
+                            <option value="low">Low</option>
+                            <option value="normal" selected>Normal</option>
+                            <option value="high">High</option>
+                            <option value="urgent">Urgent</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" id="feedbackConsent" class="form-check-input" required>
+                            <label for="feedbackConsent" class="form-check-label">
+                                I consent to the processing of my personal data for the purpose of responding to my inquiry *
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How quickly will I get a response?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We typically respond within 24 hours for general inquiries and within 2 hours for emergency and urgent matters.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Is my personal information secure?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we take data privacy seriously. All personal information is encrypted and stored securely in compliance with privacy regulations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I request emergency assistance through this form?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For immediate emergency assistance, please call our emergency hotline at +880-1711-LIFE. Use this form for non-urgent matters.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How can I become a partner organization?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Select "Partnership" as your subject and provide details about your organization. Our partnership team will contact you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <div class="back-home">
+        <a href="index.html" class="back-btn">← Back to Life Line</a>
+    </div>
+
+    <script src="contact.js"></script>
+</body>
+</html>

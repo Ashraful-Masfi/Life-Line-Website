@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Registration - Life Line</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="donner.css">
+</head>
+<body>
+    <!-- Donor Registration Header -->
+    <header class="donor-header">
+        <div class="container">
+            <h1 class="donor-title">🩸 Become a Blood Donor</h1>
+            <p class="donor-subtitle">Your donation can save up to 3 lives. Join our life-saving community today.</p>
+        </div>
+    </header>
+
+    <!-- Registration Form -->
+    <section class="registration-section">
+        <div class="container">
+            <div class="registration-card">
+                <h3>Donor Registration Form</h3>
+                <form id="donorForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="fatherName">Father's Name *</label>
+                                <input type="text" id="fatherName" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="age">Age *</label>
+                                <input type="number" id="age" class="form-control" min="18" max="65" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="gender">Gender *</label>
+                                <select id="gender" class="form-control" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Full Address *</label>
+                        <textarea id="address" class="form-control" rows="3" required></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="contactNumber">Contact Number *</label>
+                                <input type="tel" id="contactNumber" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="bloodGroup">Blood Group *</label>
+                                <select id="bloodGroup" class="form-control" required>
+                                    <option value="">Select Blood Group</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="lastDonation">Last Donation Date</label>
+                                <input type="date" id="lastDonation" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="medicalHistory">Medical History (if any)</label>
+                        <textarea id="medicalHistory" class="form-control" rows="3" placeholder="Any existing medical conditions, medications, etc."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" id="eligibility" class="form-check-input" required>
+                            <label for="eligibility" class="form-check-label">
+                                I confirm that I meet the eligibility criteria for blood donation *
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" id="consent" class="form-check-input" required>
+                            <label for="consent" class="form-check-label">
+                                I consent to be contacted for blood donation when needed *
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Register as Donor</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Criteria -->
+    <section class="eligibility-section">
+        <div class="container">
+            <h2 class="section-title">Eligibility Criteria</h2>
+            <div class="eligibility-grid">
+                <div class="criteria-card">
+                    <div class="criteria-icon">🎂</div>
+                    <h4>Age</h4>
+                    <p>18 - 65 years</p>
+                </div>
+                <div class="criteria-card">
+                    <div class="criteria-icon">⚖️</div>
+                    <h4>Weight</h4>
+                    <p>Minimum 50 kg</p>
+                </div>
+                <div class="criteria-card">
+                    <div class="criteria-icon">❤️</div>
+                    <h4>Health</h4>
+                    <p>Good health condition</p>
+                </div>
+                <div class="criteria-card">
+                    <div class="criteria-icon">⏰</div>
+                    <h4>Frequency</h4>
+                    <p>Every 3 months</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <div class="back-home">
+        <a href="index.html" class="back-btn">← Back to Life Line</a>
+    </div>
+
+    <script src="donner.js"></script>
+</body>
+</html>

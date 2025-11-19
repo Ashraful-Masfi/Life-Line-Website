@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dengue & Malaria Alert - Life Line</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="dengu.css">
+</head>
+<body>
+    <!-- Dengue Header -->
+    <header class="dengue-header">
+        <div class="container">
+            <h1 class="dengue-title">🦟 Dengue & Malaria Alert</h1>
+            <p class="dengue-subtitle">Stay protected from mosquito-borne diseases with real-time alerts and prevention tips</p>
+            
+            <!-- Emergency Alert -->
+            <div class="emergency-alert">
+                <div class="alert-icon">🚨</div>
+                <div class="alert-content">
+                    <h4>High Dengue Risk Alert</h4>
+                    <p>Dhaka division reporting increased dengue cases. Take preventive measures immediately.</p>
+                    <div class="alert-stats">
+                        <span class="stat">📈 245 New Cases Today</span>
+                        <span class="stat">🎯 High Risk Areas: 12</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Risk Map Section -->
+    <section class="risk-map-section">
+        <div class="container">
+            <h2 class="section-title">Dengue Risk Map</h2>
+            <div class="risk-map">
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <div class="color high-risk"></div>
+                        <span>High Risk</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="color medium-risk"></div>
+                        <span>Medium Risk</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="color low-risk"></div>
+                        <span>Low Risk</span>
+                    </div>
+                </div>
+                
+                <div class="areas-grid">
+                    <div class="area-card high-risk">
+                        <h4>Dhaka City Corporation</h4>
+                        <p>245 cases reported this week</p>
+                        <span class="risk-level">High Risk</span>
+                    </div>
+                    
+                    <div class="area-card medium-risk">
+                        <h4>Narayanganj</h4>
+                        <p>89 cases reported this week</p>
+                        <span class="risk-level">Medium Risk</span>
+                    </div>
+                    
+                    <div class="area-card high-risk">
+                        <h4>Gazipur</h4>
+                        <p>167 cases reported this week</p>
+                        <span class="risk-level">High Risk</span>
+                    </div>
+                    
+                    <div class="area-card medium-risk">
+                        <h4>Chittagong City</h4>
+                        <p>78 cases reported this week</p>
+                        <span class="risk-level">Medium Risk</span>
+                    </div>
+                    
+                    <div class="area-card low-risk">
+                        <h4>Sylhet</h4>
+                        <p>23 cases reported this week</p>
+                        <span class="risk-level">Low Risk</span>
+                    </div>
+                    
+                    <div class="area-card low-risk">
+                        <h4>Khulna</h4>
+                        <p>15 cases reported this week</p>
+                        <span class="risk-level">Low Risk</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testing Centers -->
+    <section class="testing-section">
+        <div class="container">
+            <h2 class="section-title">Dengue Testing Centers</h2>
+            
+            <div class="filter-card">
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <label for="districtFilter">Select District</label>
+                        <select id="districtFilter" class="form-control">
+                            <option value="all">All Districts</option>
+                            <option value="dhaka">Dhaka</option>
+                            <option value="chittagong">Chittagong</option>
+                            <option value="khulna">Khulna</option>
+                            <option value="rajshahi">Rajshahi</option>
+                            <option value="sylhet">Sylhet</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="testType">Test Type</label>
+                        <select id="testType" class="form-control">
+                            <option value="all">All Tests</option>
+                            <option value="ns1">NS1 Antigen Test</option>
+                            <option value="igg">IgG/IgM Test</option>
+                            <option value="malaria">Malaria Test</option>
+                            <option value="complete">Complete Blood Test</option>
+                        </select>
+                    </div>
+                    
+                    <button class="search-btn" onclick="filterTestingCenters()">Find Centers</button>
+                </div>
+            </div>
+
+            <div class="centers-grid" id="centersGrid">
+                <!-- Testing centers will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Prevention Guide -->
+    <section class="prevention-section">
+        <div class="container">
+            <h2 class="section-title">Prevention & Protection</h2>
+            
+            <div class="prevention-grid">
+                <div class="prevention-card">
+                    <div class="prevention-icon">🚫</div>
+                    <h4>Eliminate Breeding</h4>
+                    <p>Remove stagnant water from containers, flower pots, and coolers</p>
+                </div>
+                
+                <div class="prevention-card">
+                    <div class="prevention-icon">🛏️</div>
+                    <h4>Use Mosquito Nets</h4>
+                    <p>Sleep under insecticide-treated mosquito nets</p>
+                </div>
+                
+                <div class="prevention-card">
+                    <div class="prevention-icon">👕</div>
+                    <h4>Wear Protective Clothing</h4>
+                    <p>Wear long-sleeved shirts and long pants during peak mosquito hours</p>
+                </div>
+                
+                <div class="prevention-card">
+                    <div class="prevention-icon">🧴</div>
+                    <h4>Use Repellents</h4>
+                    <p>Apply mosquito repellent on exposed skin and clothing</p>
+                </div>
+                
+                <div class="prevention-card">
+                    <div class="prevention-icon">🏠</div>
+                    <h4>Secure Your Home</h4>
+                    <p>Use window and door screens to keep mosquitoes out</p>
+                </div>
+                
+                <div class="prevention-card">
+                    <div class="prevention-icon">🌡️</div>
+                    <h4>Monitor Symptoms</h4>
+                    <p>Watch for high fever, severe headache, pain behind eyes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Symptoms & Treatment -->
+    <section class="symptoms-section">
+        <div class="container">
+            <h2 class="section-title">Symptoms & Emergency Care</h2>
+            
+            <div class="symptoms-content">
+                <div class="symptoms-list">
+                    <h4>🦠 Dengue Symptoms</h4>
+                    <ul>
+                        <li>High fever (104°F/40°C)</li>
+                        <li>Severe headache</li>
+                        <li>Pain behind the eyes</li>
+                        <li>Muscle and joint pain</li>
+                        <li>Nausea and vomiting</li>
+                        <li>Skin rash</li>
+                        <li>Mild bleeding from nose or gums</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-signs">
+                    <h4>🚨 Severe Dengue Warning Signs</h4>
+                    <ul>
+                        <li>Severe abdominal pain</li>
+                        <li>Persistent vomiting</li>
+                        <li>Rapid breathing</li>
+                        <li>Bleeding gums</li>
+                        <li>Fatigue and restlessness</li>
+                        <li>Blood in vomit or stool</li>
+                    </ul>
+                    <p class="emergency-note">Seek IMMEDIATE medical attention if any warning signs appear!</p>
+                </div>
+            </div>
+            
+            <div class="treatment-guide">
+                <h4>💊 Home Care Tips</h4>
+                <div class="treatment-steps">
+                    <div class="step">
+                        <strong>1. Stay Hydrated:</strong> Drink plenty of fluids - water, ORS, coconut water
+                    </div>
+                    <div class="step">
+                        <strong>2. Rest:</strong> Get adequate rest and avoid physical exertion
+                    </div>
+                    <div class="step">
+                        <strong>3. Medication:</strong> Use paracetamol for fever and pain. Avoid aspirin and ibuprofen
+                    </div>
+                    <div class="step">
+                        <strong>4. Monitor:</strong> Keep track of temperature and symptoms daily
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <div class="back-home">
+        <a href="index.html" class="back-btn">← Back to Life Line</a>
+    </div>
+
+    <script src="dengu.js"></script>
+</body>
+</html>

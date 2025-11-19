@@ -1,0 +1,362 @@
+/* Blood Bank Page Styles */
+:root {
+    --blood-red: #cc0000;
+    --blood-dark: #8B0000;
+    --available-green: #00cc66;
+    --unavailable-red: #cc0000;
+    --dark-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+}
+
+body {
+    background: var(--dark-bg);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Blood Bank Header */
+.bloodbank-header {
+    background: linear-gradient(135deg, #330000 0%, #660000 100%);
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.bloodbank-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="droplet" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10 0C4.5 0 0 4.5 0 10C0 20 10 30 10 30S20 20 20 10C20 4.5 15.5 0 10 0Z" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23droplet)"/></svg>');
+    opacity: 0.2;
+}
+
+.bloodbank-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--blood-red);
+    text-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.bloodbank-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+/* Blood Filter */
+.blood-filter {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.filter-title {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.blood-groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.blood-btn {
+    background: #333;
+    color: white;
+    border: 2px solid #555;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.blood-btn:hover {
+    background: #444;
+    border-color: var(--blood-red);
+}
+
+.blood-btn.active {
+    background: var(--blood-red);
+    border-color: var(--blood-red);
+    box-shadow: 0 0 15px rgba(204, 0, 0, 0.5);
+}
+
+/* Blood Banks Grid */
+.bloodbanks-section {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+}
+
+.bloodbanks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.bloodbank-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.bloodbank-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bloodbank-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--blood-red);
+    box-shadow: 0 15px 40px rgba(204, 0, 0, 0.3);
+}
+
+.bloodbank-name {
+    color: var(--blood-red);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.bloodbank-location {
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.bloodbank-contact {
+    background: #2a2a2a;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.bloodbank-contact:hover {
+    background: #333;
+    transform: translateX(5px);
+}
+
+.contact-number {
+    color: var(--available-green);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Blood Inventory */
+.blood-inventory {
+    margin-top: 1.5rem;
+}
+
+.inventory-title {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.blood-groups-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.blood-group-item {
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: #2a2a2a;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.blood-group-item.available {
+    background: rgba(0, 204, 102, 0.2);
+    border: 1px solid var(--available-green);
+}
+
+.blood-group-item.unavailable {
+    background: rgba(204, 0, 0, 0.2);
+    border: 1px solid var(--unavailable-red);
+    opacity: 0.6;
+}
+
+.group-type {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.group-status {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.available .group-status {
+    color: var(--available-green);
+}
+
+.unavailable .group-status {
+    color: var(--unavailable-red);
+}
+
+.distance-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--blood-red);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(204, 0, 0, 0.3);
+}
+
+/* Emergency Request */
+.emergency-request {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #330000 0%, #660000 100%);
+}
+
+.emergency-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--blood-red);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.emergency-card h3 {
+    color: var(--blood-red);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.emergency-card p {
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.emergency-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.emergency-number {
+    color: var(--available-green);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 204, 102, 0.5);
+}
+
+.emergency-btn {
+    background: var(--blood-red);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(204, 0, 0, 0.4);
+}
+
+.emergency-btn:hover {
+    background: #ff0000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(204, 0, 0, 0.6);
+}
+
+/* Back to Home */
+.back-home {
+    text-align: center;
+    padding: 3rem 0;
+    background: #111;
+}
+
+.back-btn {
+    color: var(--blood-red);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--blood-red);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background: var(--blood-red);
+    color: white;
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        text-shadow: 0 0 30px rgba(204, 0, 0, 0.8);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .bloodbank-title {
+        font-size: 2rem;
+    }
+    
+    .bloodbanks-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .blood-groups-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .emergency-contact {
+        flex-direction: column;
+    }
+    
+    .blood-groups {
+        gap: 0.3rem;
+    }
+    
+    .blood-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}

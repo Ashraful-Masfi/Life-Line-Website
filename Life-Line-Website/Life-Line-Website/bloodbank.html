@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank - Life Line</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bloodbank.css">
+</head>
+<body>
+    <!-- Blood Bank Header -->
+    <header class="bloodbank-header">
+        <div class="container">
+            <h1 class="bloodbank-title">🩸 Blood Bank Inventory</h1>
+            <p class="bloodbank-subtitle">Find available blood groups in nearby blood banks</p>
+            
+            <!-- Blood Group Filter -->
+            <div class="blood-filter">
+                <div class="filter-title">Filter by Blood Group:</div>
+                <div class="blood-groups">
+                    <button class="blood-btn active" data-group="all">All</button>
+                    <button class="blood-btn" data-group="A+">A+</button>
+                    <button class="blood-btn" data-group="A-">A-</button>
+                    <button class="blood-btn" data-group="B+">B+</button>
+                    <button class="blood-btn" data-group="B-">B-</button>
+                    <button class="blood-btn" data-group="O+">O+</button>
+                    <button class="blood-btn" data-group="O-">O-</button>
+                    <button class="blood-btn" data-group="AB+">AB+</button>
+                    <button class="blood-btn" data-group="AB-">AB-</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blood Banks Grid -->
+    <section class="bloodbanks-section">
+        <div class="container">
+            <div class="bloodbanks-grid" id="bloodbanksGrid">
+                <!-- Blood banks will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Blood Request -->
+    <section class="emergency-request">
+        <div class="container">
+            <div class="emergency-card">
+                <h3>🚨 Need Blood Urgently?</h3>
+                <p>If you need blood immediately, contact our emergency helpline</p>
+                <div class="emergency-contact">
+                    <span class="emergency-number">+880-1711-BLOOD</span>
+                    <button class="emergency-btn">Call Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <div class="back-home">
+        <a href="index.html" class="back-btn">← Back to Life Line</a>
+    </div>
+
+    <script src="bloodbank.js"></script>
+</body>
+</html>

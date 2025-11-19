@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Line - Your Digital Bridge to Emergency Care</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+     <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+            <span class="brand-text">Life Line</span>
+            </a>
+            <div class="d-flex">
+                <a href="emergency.html" class="emergency-btn blink">Emergency</a>
+                <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+<section class="hero-section">
+    <div class="video-background">
+        <video autoplay muted loop playsinline id="bgVideo">
+            <source src="videos/heartbeat.mp4.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+         <div class="hero-content">
+        <div class="heartbeat-animation">
+            <div class="heart"></div>
+            <h1 class="hero-title">Life Line</h1> 
+            <p class="hero-tagline"><b>Your Digital Bridge to Emergency Care</b></p>
+        </div>
+</section>
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="row">
+                <!-- Hospital Panel -->
+                <div class="col-md-6">
+                    <div class="service-panel hospital-panel" onclick="location.href='hospital.html'">
+                        <div class="panel-icon">🏥</div>
+                        <h3>Hospital Listings</h3>
+                        <p>Find top hospitals with emergency contacts</p>
+                        <div class="animation-circle"></div>
+                    </div>
+                </div>
+                
+                <!-- Blood Bank Panel -->
+                <div class="col-md-6">
+                    <div class="service-panel bloodbank-panel" onclick="location.href='bloodbank.html'">
+                        <div class="panel-icon">🩸</div>
+                        <h3>Blood Bank</h3>
+                        <p>Check blood availability in nearby banks</p>
+                        <div class="animation-circle"></div>
+                    </div>
+                </div>
+            
+    
+
+                <!-- FirstAid Panel -->
+                <div class="col-md-6">
+                    <div class="service-panel firstaid-pannel" onclick="location.href='firstaid.html'">
+                        <div class="panel-icon">🩹</div>
+                        <h3>First Aid</h3>
+                        <p>Emergency medical assistance at your fingertips</p>
+                        <div class="animation-circle"></div>
+                    </div>
+                </div>
+            
+        
+    
+                <!-- HealthStatus Panel -->
+                <div class="col-md-6">
+                    <div class="service-panel healthstatus-pannel" onclick="location.href='healthstatus.html'">
+                        <div class="panel-icon">💪</div>
+                        <h3>Health Status</h3>
+                        <p>Monitor your health with BMI, BMR and vital parameters</p>
+                        <div class="animation-circle"></div>
+                    </div>
+                </div>
+            
+        
+
+                <!-- HealthAwareness Panel -->
+                <div class="col-md-6">
+                    <div class="service-panel healthawareness-pannel" onclick="location.href='awareness.html'">
+                        <div class="panel-icon">💡</div>
+                        <h3>Health Awareness</h3>
+                        <p>Empowering you with knowledge for a healthier life</p>
+                        <div class="animation-circle"></div>
+                    </div>
+                </div>
+
+                 <!-- DoctorsBlog Panel -->
+                <div class="col-md-6">
+                    <div class="service-panel doctors-blog-pannel" onclick="location.href='doctors-blog.html'">
+                        <div class="panel-icon">🩺</div>
+                        <h3>Doctors-Blog</h3>
+                        <p>Medical insights and health advice from experienced doctors</p>
+                        <div class="animation-circle"></div>
+                    </div>
+                </div>
+
+                <!-- Antivenom Panel -->
+                <div class="col-md-6">
+                    <div class="service-panel antivenom-pannel" onclick="location.href='antivenom.html'">
+                        <div class="panel-icon">🐍</div>
+                        <h3>Antivenom</h3>
+                        <p>Find snake bite treatment centers and antivenom availability across Bangladesh</p>
+                        <div class="animation-circle"></div>
+                    </div>
+                </div>
+                
+                <!-- Vaccination Panel -->
+                <div class="col-md-6">
+                    <div class="service-panel vaccination-pannel" onclick="location.href='vaccination.html'">
+                        <div class="panel-icon">💉</div>
+                        <h3>Vaccination</h3>
+                        <p>Find vaccination centers and schedule your immunization</p>
+                        <div class="animation-circle"></div>
+                    </div>
+                </div>
+
+                <!-- Dengu Panel -->
+                <div class="col-md-6">
+                    <div class="service-panel dengu-pannel" onclick="location.href='dengu.html'">
+                        <div class="panel-icon">🦟</div>
+                        <h3>Dengu Pannel</h3>
+                        <p>Stay protected from mosquito-borne diseases with real-time alerts and prevention tips</p>
+                        <div class="animation-circle"></div>
+                    </div>
+                </div>
+            
+                <!-- Ambulance Panel -->
+                <div class="col-md-6">
+                    <div class="service-panel ambulance-pannel" onclick="location.href='ambulance.html'">
+                        <div class="panel-icon">🚑</div>
+                        <h3>Ambulance</h3>
+                        <p>Emergency ambulance service with real-time tracking across Bangladesh</p>
+                        <div class="animation-circle"></div>
+                    </div>
+                </div>
+              </div>  
+          </div>
+    </section>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

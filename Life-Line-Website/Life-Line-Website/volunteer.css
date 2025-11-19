@@ -1,0 +1,311 @@
+/* Volunteer Page Styles */
+:root {
+    --volunteer-green: #00cc66;
+    --volunteer-blue: #0066cc;
+    --dark-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+}
+
+body {
+    background: var(--dark-bg);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Volunteer Header */
+.volunteer-header {
+    background: linear-gradient(135deg, #003300 0%, #006600 100%);
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.volunteer-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 204, 102, 0.5);
+    margin-bottom: 1rem;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.volunteer-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 0;
+    position: relative;
+}
+
+/* Opportunities Section */
+.opportunities-section {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+}
+
+.section-title {
+    text-align: center;
+    color: var(--volunteer-green);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.opportunities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.opportunity-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.opportunity-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.opportunity-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--volunteer-green);
+    box-shadow: 0 15px 40px rgba(0, 204, 102, 0.3);
+}
+
+.opportunity-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.opportunity-card h3 {
+    color: var(--volunteer-green);
+    margin-bottom: 1rem;
+}
+
+.opportunity-card p {
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.opportunity-card ul {
+    color: #ccc;
+    padding-left: 1.5rem;
+}
+
+.opportunity-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Volunteer Form Section */
+.volunteer-form-section {
+    padding: 4rem 0;
+    background: #111;
+}
+
+.form-container {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 204, 102, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-container h3 {
+    color: var(--volunteer-green);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: bold;
+}
+
+.form-control {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--volunteer-green);
+    box-shadow: 0 0 10px rgba(0, 204, 102, 0.3);
+    outline: none;
+}
+
+/* Interests Grid */
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.interest-option {
+    background: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #444;
+}
+
+.interest-option:hover {
+    background: #333;
+    border-color: var(--volunteer-green);
+}
+
+.interest-option input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.form-check {
+    margin-bottom: 1rem;
+}
+
+.form-check-input {
+    margin-right: 0.5rem;
+}
+
+.form-check-label {
+    color: #ccc;
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, var(--volunteer-green), #00ff88);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 204, 102, 0.4);
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 204, 102, 0.6);
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--volunteer-green);
+    box-shadow: 0 15px 40px rgba(0, 204, 102, 0.3);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-card h4 {
+    color: var(--volunteer-green);
+    margin-bottom: 1rem;
+}
+
+.benefit-card p {
+    color: #ccc;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Back to Home */
+.back-home {
+    text-align: center;
+    padding: 3rem 0;
+    background: #111;
+}
+
+.back-btn {
+    color: var(--volunteer-green);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--volunteer-green);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background: var(--volunteer-green);
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 204, 102, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .volunteer-title {
+        font-size: 2rem;
+    }
+    
+    .form-container {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .interests-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .opportunities-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,462 @@
+/* Antivenom Page Styles */
+:root {
+    --antivenom-green: #00cc66;
+    --antivenom-orange: #ff9900;
+    --antivenom-red: #cc0000;
+    --antivenom-yellow: #ffcc00;
+    --dark-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+}
+
+body {
+    background: var(--dark-bg);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Antivenom Header */
+.antivenom-header {
+    background: linear-gradient(135deg, #003300 0%, #006600 100%);
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.antivenom-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="snake" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M0 10Q10 0 20 10T40 10T60 10T80 10" stroke="rgba(255,255,255,0.1)" fill="none" stroke-width="2"/></pattern></defs><rect width="100" height="100" fill="url(%23snake)"/></svg>');
+    opacity: 0.3;
+}
+
+.antivenom-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 204, 102, 0.5);
+    margin-bottom: 1rem;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.antivenom-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+/* Emergency Alert */
+.emergency-alert {
+    background: rgba(204, 0, 0, 0.2);
+    border: 2px solid var(--antivenom-red);
+    padding: 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+}
+
+.alert-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.alert-content h4 {
+    color: var(--antivenom-red);
+    margin-bottom: 0.5rem;
+}
+
+.alert-content p {
+    color: #ccc;
+    margin: 0;
+}
+
+/* Filter Section */
+.filter-section {
+    padding: 3rem 0;
+    background: var(--dark-bg);
+}
+
+.filter-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.filter-card h3 {
+    color: var(--antivenom-green);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.filter-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 1rem;
+    align-items: end;
+}
+
+.filter-group {
+    margin-bottom: 0;
+}
+
+.filter-group label {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: bold;
+}
+
+.form-control {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--antivenom-green);
+    box-shadow: 0 0 10px rgba(0, 204, 102, 0.3);
+    outline: none;
+}
+
+.search-btn {
+    background: var(--antivenom-green);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    height: fit-content;
+}
+
+.search-btn:hover {
+    background: #00b359;
+    transform: translateY(-2px);
+}
+
+/* Centers Section */
+.centers-section {
+    padding: 4rem 0;
+    background: #111;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--antivenom-green);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.centers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.center-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.center-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.center-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--antivenom-green);
+    box-shadow: 0 15px 40px rgba(0, 204, 102, 0.3);
+}
+
+.center-header {
+    display: flex;
+    justify-content: between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.center-name {
+    color: var(--antivenom-green);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.center-type {
+    background: var(--antivenom-orange);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.center-location {
+    color: #ccc;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.center-contact {
+    background: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.center-contact:hover {
+    background: #333;
+    transform: translateX(5px);
+}
+
+.contact-number {
+    color: var(--antivenom-green);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Antivenom Inventory */
+.antivenom-inventory {
+    margin-top: 1.5rem;
+}
+
+.inventory-title {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.venom-types {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.venom-item {
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: #2a2a2a;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.venom-item.available {
+    background: rgba(0, 204, 102, 0.2);
+    border: 1px solid var(--antivenom-green);
+}
+
+.venom-item.unavailable {
+    background: rgba(204, 0, 0, 0.2);
+    border: 1px solid var(--antivenom-red);
+    opacity: 0.6;
+}
+
+.venom-type {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.venom-status {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.available .venom-status {
+    color: var(--antivenom-green);
+}
+
+.unavailable .venom-status {
+    color: var(--antivenom-red);
+}
+
+.distance-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--antivenom-green);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 204, 102, 0.3);
+}
+
+/* First Aid Section */
+.firstaid-section {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+}
+
+.firstaid-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.step-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-left: 4px solid var(--antivenom-green);
+    transition: all 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateX(5px);
+    background: #2a2a2a;
+}
+
+.step-number {
+    background: var(--antivenom-green);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.step-content p {
+    color: #ccc;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.warning-box {
+    background: rgba(255, 153, 0, 0.2);
+    border: 2px solid var(--antivenom-orange);
+    padding: 2rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.warning-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.warning-content h4 {
+    color: var(--antivenom-orange);
+    margin-bottom: 1rem;
+}
+
+.warning-content ul {
+    color: #ccc;
+    padding-left: 1.5rem;
+}
+
+.warning-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Back to Home */
+.back-home {
+    text-align: center;
+    padding: 3rem 0;
+    background: #111;
+}
+
+.back-btn {
+    color: var(--antivenom-green);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--antivenom-green);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background: var(--antivenom-green);
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 204, 102, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .antivenom-title {
+        font-size: 2rem;
+    }
+    
+    .filter-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .centers-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .firstaid-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .emergency-alert {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .venom-types {
+        grid-template-columns: 1fr;
+    }
+    
+    .warning-box {
+        flex-direction: column;
+        text-align: center;
+    }
+}

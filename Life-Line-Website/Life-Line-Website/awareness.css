@@ -1,0 +1,299 @@
+/* Awareness Page Styles */
+:root {
+    --awareness-green: #00cc66;
+    --awareness-blue: #0066cc;
+    --awareness-orange: #ff9900;
+    --awareness-purple: #9933cc;
+    --dark-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+}
+
+body {
+    background: var(--dark-bg);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Awareness Header */
+.awareness-header {
+    background: linear-gradient(135deg, #003300 0%, #006600 100%);
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.awareness-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 204, 102, 0.5);
+    margin-bottom: 1rem;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.awareness-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 0;
+    position: relative;
+}
+
+/* Topics Section */
+.topics-section {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.topic-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.topic-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.topic-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 204, 102, 0.3);
+}
+
+.topic-card[data-topic="hygiene"]:hover { border-color: var(--awareness-blue); }
+.topic-card[data-topic="nutrition"]:hover { border-color: var(--awareness-green); }
+.topic-card[data-topic="exercise"]:hover { border-color: var(--awareness-orange); }
+.topic-card[data-topic="mental"]:hover { border-color: var(--awareness-purple); }
+.topic-card[data-topic="prevention"]:hover { border-color: #cc0000; }
+.topic-card[data-topic="firstaid"]:hover { border-color: #ff3333; }
+
+.topic-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.topic-card h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.topic-card p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.topic-btn {
+    background: transparent;
+    color: var(--awareness-green);
+    border: 2px solid var(--awareness-green);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.topic-btn:hover {
+    background: var(--awareness-green);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Detail Section */
+.detail-section {
+    padding: 4rem 0;
+    background: #111;
+    min-height: 60vh;
+}
+
+.back-btn {
+    background: transparent;
+    color: var(--awareness-green);
+    border: 2px solid var(--awareness-green);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.back-btn:hover {
+    background: var(--awareness-green);
+    color: white;
+}
+
+.detail-content {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid var(--awareness-green);
+}
+
+.detail-content h2 {
+    color: var(--awareness-green);
+    margin-bottom: 1.5rem;
+}
+
+.detail-points {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.detail-point {
+    background: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--awareness-green);
+    transition: all 0.3s ease;
+}
+
+.detail-point:hover {
+    transform: translateX(5px);
+    background: #333;
+}
+
+/* Tips Section */
+.tips-section {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+}
+
+.section-title {
+    text-align: center;
+    color: var(--awareness-green);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.tips-carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.tip-slide {
+    display: none;
+    background: var(--card-bg);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid var(--awareness-green);
+}
+
+.tip-slide.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.tip-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.tip-slide h4 {
+    color: var(--awareness-green);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.tip-slide p {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.carousel-btn {
+    background: var(--awareness-green);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.carousel-btn:hover {
+    background: #00b359;
+    transform: scale(1.1);
+}
+
+/* Back to Home */
+.back-home {
+    text-align: center;
+    padding: 3rem 0;
+    background: #111;
+}
+
+.back-btn {
+    color: var(--awareness-green);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--awareness-green);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background: var(--awareness-green);
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 204, 102, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .awareness-title {
+        font-size: 2rem;
+    }
+    
+    .topics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tip-slide {
+        padding: 2rem 1rem;
+    }
+}

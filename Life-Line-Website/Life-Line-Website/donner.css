@@ -1,0 +1,221 @@
+/* Donor Registration Styles */
+:root {
+    --donor-red: #cc0000;
+    --donor-dark: #8B0000;
+    --dark-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+}
+
+body {
+    background: var(--dark-bg);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Donor Header */
+.donor-header {
+    background: linear-gradient(135deg, #330000 0%, #660000 100%);
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.donor-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.donor-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 0;
+    position: relative;
+}
+
+/* Registration Section */
+.registration-section {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+}
+
+.registration-card {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(204, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.registration-card h3 {
+    color: var(--donor-red);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: bold;
+}
+
+.form-control {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--donor-red);
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.3);
+    outline: none;
+}
+
+.form-check {
+    margin-bottom: 1rem;
+}
+
+.form-check-input {
+    margin-right: 0.5rem;
+}
+
+.form-check-label {
+    color: #ccc;
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, var(--donor-red), #ff3333);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(204, 0, 0, 0.4);
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(204, 0, 0, 0.6);
+}
+
+/* Eligibility Section */
+.eligibility-section {
+    padding: 4rem 0;
+    background: #111;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--donor-red);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.eligibility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.criteria-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
+
+.criteria-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--donor-red);
+    box-shadow: 0 15px 40px rgba(204, 0, 0, 0.3);
+}
+
+.criteria-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.criteria-card h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.criteria-card p {
+    color: #ccc;
+    margin: 0;
+}
+
+/* Back to Home */
+.back-home {
+    text-align: center;
+    padding: 3rem 0;
+    background: var(--dark-bg);
+}
+
+.back-btn {
+    color: var(--donor-red);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--donor-red);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background: var(--donor-red);
+    color: white;
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .donor-title {
+        font-size: 2rem;
+    }
+    
+    .registration-card {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .eligibility-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

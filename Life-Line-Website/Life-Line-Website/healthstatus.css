@@ -1,0 +1,392 @@
+/* Health Status Page Styles */
+:root {
+    --health-blue: #0066cc;
+    --health-green: #00cc66;
+    --health-orange: #ff9900;
+    --health-red: #cc0000;
+    --dark-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+}
+
+body {
+    background: var(--dark-bg);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Health Header */
+.health-header {
+    background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.health-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="heartbeat" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M3 10S6 6 10 6s7 4 7 4v8s-3-4-7-4-7 4-7 4z" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23heartbeat)"/></svg>');
+    opacity: 0.3;
+}
+
+.health-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
+    margin-bottom: 1rem;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.health-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 0;
+    position: relative;
+}
+
+/* Calculator Section */
+.calculator-section {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+}
+
+.input-form {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 102, 204, 0.2);
+}
+
+.input-form h3 {
+    color: var(--health-blue);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: bold;
+}
+
+.form-control {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--health-blue);
+    box-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
+    outline: none;
+}
+
+.calculate-btn {
+    background: linear-gradient(45deg, var(--health-blue), #0088ff);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.4);
+    margin-top: 1rem;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 102, 204, 0.6);
+}
+
+/* Results Container */
+.results-container, .placeholder-container {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0, 102, 204, 0.2);
+}
+
+.results-container h3 {
+    color: var(--health-blue);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.placeholder-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.placeholder-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.placeholder-container h4 {
+    color: var(--health-blue);
+    margin-bottom: 1rem;
+}
+
+.placeholder-container p {
+    color: #ccc;
+}
+
+/* Result Cards */
+.result-card {
+    background: #2a2a2a;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.result-card:hover {
+    transform: translateX(5px);
+    background: #333;
+}
+
+.bmi-result {
+    border-left-color: var(--health-blue);
+}
+
+.bmr-result {
+    border-left-color: var(--health-green);
+}
+
+.calories-result {
+    border-left-color: var(--health-orange);
+}
+
+.result-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.result-content h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.result-category {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* BMI Scale */
+.bmi-scale {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.scale-item {
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    line-height: 1.3;
+}
+
+.underweight {
+    background: rgba(0, 102, 204, 0.3);
+    border: 1px solid var(--health-blue);
+}
+
+.normal {
+    background: rgba(0, 204, 102, 0.3);
+    border: 1px solid var(--health-green);
+}
+
+.overweight {
+    background: rgba(255, 153, 0, 0.3);
+    border: 1px solid var(--health-orange);
+}
+
+.obese {
+    background: rgba(204, 0, 0, 0.3);
+    border: 1px solid var(--health-red);
+}
+
+/* Health Tips */
+.health-tips {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+.tip-item {
+    background: rgba(0, 102, 204, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--health-blue);
+}
+
+.tip-item.warning {
+    background: rgba(255, 153, 0, 0.1);
+    border-left-color: var(--health-orange);
+}
+
+.tip-item.positive {
+    background: rgba(0, 204, 102, 0.1);
+    border-left-color: var(--health-green);
+}
+
+/* Tools Section */
+.tools-section {
+    padding: 4rem 0;
+    background: #111;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--health-blue);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(0, 102, 204, 0.5);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.tool-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
+
+.tool-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--health-blue);
+    box-shadow: 0 15px 40px rgba(0, 102, 204, 0.3);
+}
+
+.tool-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.tool-card h4 {
+    color: var(--health-blue);
+    margin-bottom: 1rem;
+}
+
+.tool-card p {
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.tool-btn {
+    background: transparent;
+    color: var(--health-blue);
+    border: 2px solid var(--health-blue);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.tool-btn:hover {
+    background: var(--health-blue);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.4);
+}
+
+/* Back to Home */
+.back-home {
+    text-align: center;
+    padding: 3rem 0;
+    background: var(--dark-bg);
+}
+
+.back-btn {
+    color: var(--health-blue);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--health-blue);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background: var(--health-blue);
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        text-shadow: 0 0 30px rgba(0, 102, 204, 0.8);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .health-title {
+        font-size: 2rem;
+    }
+    
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bmi-scale {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .input-form, .results-container, .placeholder-container {
+        margin-bottom: 2rem;
+    }
+}

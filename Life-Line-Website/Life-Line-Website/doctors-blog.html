@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors Blog - Life Line</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="doctors-blog.css">
+</head>
+<body>
+    <!-- Doctors Blog Header -->
+    <header class="blog-header">
+        <div class="container">
+            <h1 class="blog-title">🩺 Doctors Blog</h1>
+            <p class="blog-subtitle">Medical insights and health advice from experienced doctors</p>
+            
+            <!-- Blog Categories -->
+            <div class="blog-categories">
+                <button class="category-btn active" data-category="all">All Articles</button>
+                <button class="category-btn" data-category="cardiology">Cardiology</button>
+                <button class="category-btn" data-category="neurology">Neurology</button>
+                <button class="category-btn" data-category="pediatrics">Pediatrics</button>
+                <button class="category-btn" data-category="dermatology">Dermatology</button>
+                <button class="category-btn" data-category="nutrition">Nutrition</button>
+                <button class="category-btn" data-category="mental-health">Mental Health</button>
+                <button class="category-btn" data-category="prevention">Prevention</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Articles -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Featured Medical Articles</h2>
+            <div class="featured-grid">
+                <div class="featured-card" data-category="cardiology">
+                    <div class="featured-badge">Featured</div>
+                    <div class="article-image" style="background: linear-gradient(45deg, #ff6b6b, #ffa726);">❤️</div>
+                    <div class="article-content">
+                        <span class="article-category cardiology">Cardiology</span>
+                        <h3 class="article-title">Heart Disease Prevention: 10 Essential Steps</h3>
+                        <p class="article-excerpt">Learn how to protect your heart with simple lifestyle changes and early detection methods...</p>
+                        <div class="article-meta">
+                            <div class="doctor-info">
+                                <span class="doctor-name">Dr. Ahmed Hasan</span>
+                                <span class="doctor-specialty">Cardiologist</span>
+                            </div>
+                            <span class="article-date">March 25, 2024</span>
+                        </div>
+                        <button class="read-more-btn" onclick="openArticle(1)">Read Full Article →</button>
+                    </div>
+                </div>
+
+                <div class="featured-card" data-category="neurology">
+                    <div class="featured-badge">New</div>
+                    <div class="article-image" style="background: linear-gradient(45deg, #4ecdc4, #44a08d);">🧠</div>
+                    <div class="article-content">
+                        <span class="article-category neurology">Neurology</span>
+                        <h3 class="article-title">Understanding Stroke: Symptoms and Emergency Response</h3>
+                        <p class="article-excerpt">Recognize the early warning signs of stroke and learn immediate actions that can save lives...</p>
+                        <div class="article-meta">
+                            <div class="doctor-info">
+                                <span class="doctor-name">Dr. Fatima Begum</span>
+                                <span class="doctor-specialty">Neurologist</span>
+                            </div>
+                            <span class="article-date">March 24, 2024</span>
+                        </div>
+                        <button class="read-more-btn" onclick="openArticle(2)">Read Full Article →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Articles Grid -->
+    <section class="articles-section">
+        <div class="container">
+            <h2 class="section-title">All Medical Articles</h2>
+            <div class="articles-grid" id="articlesGrid">
+                <!-- Articles will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Modal -->
+    <div class="article-modal" id="articleModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeArticle()">×</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Article content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Home -->
+    <div class="back-home">
+        <a href="index.html" class="back-btn">← Back to Life Line</a>
+    </div>
+
+    <script src="doctors-blog.js"></script>
+</body>
+</html>
